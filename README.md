@@ -1,6 +1,6 @@
 # ady_connect
 
-A new Flutter project.
+A social media platform for Ashaiman District YPG where guilders can connect with each other
 
 ## Getting Started
 
