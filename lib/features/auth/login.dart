@@ -208,10 +208,13 @@ class _LoginState extends State<Login> {
                   style: AppTheme.textTheme.bodySmall,
                 ),
                 Gap(3.w),
-                Text(
-                  AppStrings.kNotRegistered,
-                  style: AppTheme.textTheme.bodySmall?.copyWith(
-                    color: AppColors.kBlue,
+                GestureDetector(
+                  onTap: () {},
+                  child: Text(
+                    AppStrings.kNotRegistered,
+                    style: AppTheme.textTheme.bodySmall?.copyWith(
+                      color: AppColors.kBlue,
+                    ),
                   ),
                 ),
               ],
