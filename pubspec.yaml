@@ -52,3 +52,9 @@ flutter:
         - asset: assets/fonts/Lato/Lato-Bold.ttf
         - asset: assets/fonts/Lato/Lato-Light.ttf
           style: italic
+
+flutter_assets:
+  assets_path: assets/
+  output_path: lib/constants/
+  filename: assets.dart
+  field_prefix:

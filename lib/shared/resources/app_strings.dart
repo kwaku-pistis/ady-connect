@@ -5,6 +5,7 @@ class AppStrings {
   static const String kLoginDesc = 'Hello, welcome back to your account';
   static const String kPhoneNumber = 'Phone Number';
   static const String kEmail = 'Email';
+  static const String kPassword = 'Password';
   static const String kRequestOtp = 'Request OTP';
   static const String kOR = 'OR';
   static const String kLoginWithGoogle = 'Login with Google';
