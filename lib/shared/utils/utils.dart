@@ -9,4 +9,11 @@ class Utils {
     }
     return true;
   }
+
+  static String formatPhoneNumber(String phoneNumber) {
+    if (phoneNumber.startsWith('0')) {
+      return phoneNumber.replaceFirst('0', '233');
+    }
+    return phoneNumber;
+  }
 }

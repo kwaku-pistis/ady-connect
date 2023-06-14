@@ -20,7 +20,7 @@ class _LoginState extends State<Login> {
   int _selectedIndex = 0;
   bool _toggleObsureText = true;
   String _phoneNumber = '';
-  String _errorText = '';
+  bool _textValidate = false;
 
   final List<String> _loginTypes = [
     AppStrings.kPhoneNumber,
@@ -114,14 +114,20 @@ class _LoginState extends State<Login> {
                       textInputType: TextInputType.phone,
                       onChanged: (value) {
                         if (value.isNotEmpty) {
-                          var isValid = Utils.validatePhoneNumber(value);
-                          if (isValid) {
+                          setState(() {
+                            _textValidate = Utils.validatePhoneNumber(value);
+                          });
+                          if (_textValidate) {
                             setState(() {
-                              _phoneNumber = value;
+                              _phoneNumber = Utils.formatPhoneNumber(value);
+                              debugPrint(_phoneNumber);
                             });
                           }
                         }
                       },
+                      errorText: _textValidate
+                          ? null
+                          : 'Please enter a valid phone number',
                     )
                   : Column(
                       children: [
@@ -169,9 +175,10 @@ class _LoginState extends State<Login> {
                 width: MediaQuery.of(context).size.width,
                 height: 57.h,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: _textValidate ? () {} : null,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.kBlue.withOpacity(.5),
+                    backgroundColor:
+                        AppColors.kBlue.withOpacity(_textValidate ? 1 : 0),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15),
                     ),
